@@ -1,0 +1,180 @@
+.dashboard-container {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .attendance-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #222222;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .attendance-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+  }
+  
+  .filter-controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    flex: 1;
+  }
+  
+  .form-group label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #cccccc;
+  }
+  
+  .form-select, .form-input {
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+    font-size: 16px;
+  }
+  
+  .form-select:disabled, .form-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .btn-fetch, .btn-submit {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 150px;
+    height: 45px;
+  }
+  
+  .btn-fetch {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-fetch:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-submit {
+    background-color: #2196F3;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0b7dda;
+  }
+  
+  .btn-fetch:disabled, .btn-submit:disabled {
+    background-color: #555555;
+    cursor: not-allowed;
+  }
+  
+  .message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #ffffff;
+    border-left: 4px solid #ff9800;
+  }
+  
+  .attendance-table-container {
+    overflow-x: hidden;
+  }
+  
+  .attendance-info {
+    background-color: #333333;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .attendance-info h3 {
+    margin: 0 0 10px 0;
+    color: #4CAF50;
+  }
+  
+  .attendance-info p {
+    margin: 0;
+    color: #cccccc;
+  }
+  
+  .attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .attendance-table th, .attendance-table td {
+    padding: 12px 12px;
+    text-align: left;
+    border-bottom: 1px solid #444444;
+  }
+  
+  .attendance-table th {
+    background-color: #333333;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .attendance-table tr:hover {
+    background-color: #2a2a2a;
+  }
+  
+  .attendance-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .attendance-checkbox input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4CAF50;
+  }
+  
+  .attendance-checkbox span {
+    font-weight: 500;
+    color: #ffffff;
+  }
+  
+  .attendance-checkbox span:after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+    border-radius: 50%;
+  }
+  
+  .attendance-checkbox input:checked + span {
+    color: #4CAF50;
+  }
+  
+  .attendance-checkbox input:not(:checked) + span {
+    color: #f44336;
+  }

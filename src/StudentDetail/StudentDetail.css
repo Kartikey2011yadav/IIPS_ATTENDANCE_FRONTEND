@@ -1,0 +1,228 @@
+.student-detail-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .student-detail-content {
+    max-width: 1200px;
+    width: 95%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    color: #f5f5f5;
+  }
+  
+  .student-detail-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .student-detail-header h2 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .student-detail-back-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #3a9e40;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .student-detail-back-btn:hover {
+    background-color: #2e7d32;
+  }
+  
+  .student-info-card, .attendance-summary-card {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .student-info-card h3, .attendance-summary-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.8rem;
+  }
+  
+  .student-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 0.3rem;
+  }
+  
+  .info-value {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .summary-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #fff;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  .good-attendance {
+    color: #3a9e40;
+  }
+  
+  .warning-attendance {
+    color: #f39c12;
+  }
+  
+  .critical-attendance {
+    color: #e74c3c;
+  }
+  
+  .attendance-records-section {
+    margin-top: 2rem;
+  }
+  
+  .attendance-records-section h3 {
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+  
+  .attendance-records-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .attendance-records-table th, 
+  .attendance-records-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #444;
+  }
+  
+  .attendance-records-table th {
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .present-row {
+    background-color: rgba(58, 158, 64, 0.15);
+  }
+  
+  .absent-row {
+    background-color: rgba(231, 76, 60, 0.15);
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .status-badge.present {
+    background-color: rgba(58, 158, 64, 0.2);
+    color: #4caf50;
+  }
+  
+  .status-badge.absent {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #f44336;
+  }
+  
+  .no-records-message {
+    text-align: center;
+    padding: 2rem;
+    color: #aaa;
+    background-color: #333;
+    border-radius: 8px;
+  }
+  
+  .student-detail-error {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    background-color: #2a2a2a;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .student-detail-content {
+      padding: 1rem;
+    }
+    .student-detail-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    .student-detail-content{
+        width: 85%;
+    }
+    .student-info-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .summary-stats {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .attendance-records-table th, 
+    .attendance-records-table td {
+      padding: 0.8rem;
+    }
+  }

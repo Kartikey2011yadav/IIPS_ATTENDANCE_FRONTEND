@@ -1,0 +1,251 @@
+.record_container {
+    padding: 20px;
+
+  }
+  
+  .record_summary-section {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .record_summary-section h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .record_filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .record_filter-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 180px;
+    max-width: 250px;
+  }
+  
+  .record_filter-group label {
+    margin-bottom: 8px;
+    font-weight: normal;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .record_filter-select {
+    padding: 8px 12px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    height: 40px;
+    width: 100%;
+    appearance: auto;
+  }
+  
+  .record_filter-select option {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .record_btn-fetch {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 40px;
+    white-space: nowrap;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .record_btn-fetch:hover {
+    background-color: #45a049;
+  }
+  
+  .record_btn-fetch:disabled {
+    background-color: #333;
+    color: #666;
+    cursor: not-allowed;
+  }
+  
+  .record_summary-table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+  }
+  
+  .record_summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: #fff;
+  }
+  
+  .record_summary-table th,
+  .record_summary-table td {
+    padding: 12px 15px;
+    border: 1px solid #444;
+    text-align: left;
+  }
+  
+  .record_summary-table th {
+    background-color: #111;
+    font-weight: normal;
+  }
+  
+  .record_summary-table tr {
+    background-color: #333;
+  }
+  
+  .record_summary-table tr:nth-child(even) {
+    background-color: #2a2a2a;
+  }
+  
+  .record_summary-table tr:hover {
+    background-color: #444;
+  }
+  
+  /* Status styling */
+  .record_status-good {
+    background-color: rgba(76, 175, 80, 0.2) !important;
+  }
+  
+  .record_status-warning {
+    background-color: rgba(255, 193, 7, 0.2) !important;
+  }
+  
+  .record_status-critical {
+    background-color: rgba(244, 67, 54, 0.2) !important;
+  }
+  
+/* Add these styles to your existing Record.css file */
+
+.record_btn-view-details {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  
+  .record_btn-view-details:hover {
+    background-color: #2980b9;
+  }
+  
+  .record_status-good {
+    background-color: rgba(46, 204, 113, 0.1);
+  }
+  
+  .record_status-warning {
+    background-color: rgba(241, 196, 15, 0.1);
+  }
+  
+  .record_status-critical {
+    background-color: rgba(231, 76, 60, 0.1);
+  }
+  
+  /* Add these styles to make table more responsive */
+  .record_summary-table-container {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+  }
+  
+  .record_summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .record_summary-table th,
+  .record_summary-table td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .record_export-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  
+  .record_btn-export {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .record_btn-export:hover {
+    background-color: #45a049;
+  }
+  
+  .record_summary-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  .record_btn-notify {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  
+  .record_btn-notify:hover {
+    background-color: #e55757;
+  }
+  
+  .record_btn-notify:before {
+    content: "✉";
+    margin-right: 5px;
+    font-size: 14px;
+  }
+  
+  .record_export-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .record_filter-row {
+      flex-direction: column;
+    }
+    
+    .record_filter-group {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    
+    .record_btn-fetch {
+      width: 100%;
+    }
+  }

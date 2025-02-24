@@ -1,0 +1,142 @@
+.notification-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+  }
+  
+  .notification-modal {
+    background-color:#111;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: modalFadeIn 0.3s;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .notification-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .notification-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .notification-modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .notification-modal-body {
+    padding: 20px;
+  }
+  
+  .notification-threshold-container {
+    margin: 20px 0;
+  }
+  
+  .notification-threshold-slider {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .notification-threshold-value {
+    font-weight: bold;
+    color: #4caf50;
+  }
+  
+  .notification-info {
+    background-color: #272727;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .notification-warning {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .notification-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .notification-cancel-btn {
+    padding: 8px 15px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .notification-send-btn {
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .notification-send-btn:disabled {
+    background-color: #5bbe59;
+    cursor: not-allowed;
+  }
+  
+  .notification-message {
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+  }
+  
+  .notification-message.success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .notification-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  @media (max-width: 768px) {
+    .notification-modal {
+      width: 95%;
+    
+    }
+    
+  }
