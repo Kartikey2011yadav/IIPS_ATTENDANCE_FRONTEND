@@ -2,7 +2,8 @@
   --background-color-light: #ffffff;
   --background-main-color-light: #ebeaea;
   --text-color-light: #000000;
-  --background-color-dark: #282828;
+  --background-color-dark: #1a1a1a;
+  --background-color-inner-dark: #282828;
   --text-color-dark: #ffffff;
   --input-background-color-light: #f0f0f0;
   --input-background-color-dark: #4d4d4d;
@@ -57,7 +58,7 @@
 
 .Sign_up_Box.dark {
   border: 1px solid var(--border-color-dark);
-  background-color: var(--background-color-dark);
+  background-color: var(--background-color-inner-dark);
 }
 
 .Sign_up_Box img {

@@ -118,8 +118,8 @@ const StudentDetail = () => {
         iserror={isError} 
       />
       
-      <div className="student-detail-content">
-        <button onClick={handleBackToRecords} className="student-detail-back-btn">Back to Records</button>
+      <div className={`student-detail-content ${theme}`}>
+        <button onClick={handleBackToRecords} className={`student-detail-back-btn ${theme}`}>Back to Records</button>
         <br />
         <br />
         <div className="student-detail-header">

@@ -373,7 +373,7 @@ const Record = () => {
                   const status = percentage >= 75 ? 'Good' : percentage >= 65 ? 'Warning' : 'Critical';
                   
                   return (
-                    <tr key={index} className={`record_status-${status.toLowerCase()}`}>
+                    <tr key={index} className={`record_status-${status.toLowerCase()} ${theme}`}>
                       <td>{record.rollNumber}</td>
                       <td>{record.studentName}</td>
                       <td>{subjects.find(s => s.code === record.subject)?.name || record.subject}</td>

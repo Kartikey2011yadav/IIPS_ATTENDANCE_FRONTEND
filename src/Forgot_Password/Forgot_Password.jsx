@@ -51,7 +51,7 @@ const ForgotPassword = () => {
     return (
         <div className={`forgot-container-main ${theme}`}>
             {loading ? (<Loader />) : (<>
-                <div className="forgot-container">
+                <div className={`forgot-container ${theme}`}>
                     <img alt="Logo" src={Logo} />
                     <h2>Forgot Your Password?</h2>
                     <form onSubmit={handleSubmit}>

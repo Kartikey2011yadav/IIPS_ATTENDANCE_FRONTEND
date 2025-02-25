@@ -113,7 +113,7 @@ function Login() {
 
   return (
     <div className={`login-container-main ${theme}`}>
-      <div className="login-container">
+      <div className={`login-container ${theme}`}>
         <img src={logo} alt="Logo" />
         <h2>Teacher : Login</h2>
         <form onSubmit={showOtp ? handleSubmit : handleLogin}>

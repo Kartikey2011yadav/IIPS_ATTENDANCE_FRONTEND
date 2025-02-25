@@ -163,7 +163,7 @@
 }
 
 .record_container.dark .record_summary-table tr:hover {
-  background-color: var(--secondary-background-color-dark);
+  background-color: transparent;
 }
 
 .record_status-good {
@@ -179,6 +179,21 @@
 .record_status-critical {
   background-color: #f8d7da;
   color: #721c24;
+}
+
+.record_status-good.dark {
+  background-color: #55be5833;
+  color: #d4edda;
+}
+
+.record_status-warning.dark {
+  background-color: #ffc10733;
+  color: #fff3cd;
+}
+
+.record_status-critical.dark {
+  background-color: #f4433633;
+  color: #e2d2d2;
 }
 
 .record_btn-view-details {

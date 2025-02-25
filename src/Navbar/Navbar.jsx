@@ -32,9 +32,11 @@ const Navbar = ({ theme, toggleTheme }) => {
     if (!open) {
       sidebar.style.transform = "translateX(0%)";
       setOpen(true);
+      document.body.style.overflow = "hidden";
     } else {
       sidebar.style.transform = "translateX(100%)";
       setOpen(false);
+      document.body.style.overflow = "auto";
     }
   };
 
@@ -75,10 +77,12 @@ const Navbar = ({ theme, toggleTheme }) => {
           </p>
         </div>
         <div className="navbar-right-margin navbar-displayed">
+        <p className="toggle-head">Toggle Theme
           <label className="switch">
             <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
             <span className="slider round"></span>
           </label>
+          </p>
           <p className="navbar-logout" onClick={handleLogout}>
             <span className="logbut">
               <FaPowerOff size={15} /> Logout

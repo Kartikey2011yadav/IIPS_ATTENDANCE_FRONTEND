@@ -2,6 +2,7 @@
   --background-color-light: #ffffff;
   --text-color-light: #000000;
   --background-color-dark: #111;
+  --background-color-inner-dark: #282828;
   --text-color-dark: #f5f5f5;
   --card-background-color-light: #f0f0f0;
   --card-background-color-dark: #1e1e1e;
@@ -14,10 +15,11 @@
 }
 
 .student-detail-container {
-  width: 100%;
+  /* width: 100%; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .student-detail-container.light {

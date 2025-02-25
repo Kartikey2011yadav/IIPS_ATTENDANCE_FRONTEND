@@ -3,6 +3,7 @@
   --background-main-color-light: #ebeaea;
   --text-color-light: #000000;
   --background-color-dark: #1a1a1a;
+  --background-color-inner-dark: #282828;
   --text-color-dark: #ffffff;
   --input-background-color-light: #f0f0f0;
   --input-background-color-dark: #4d4d4d;
@@ -47,7 +48,7 @@
 
 .login-container.dark {
   border: 1px solid var(--border-color-dark);
-  background-color: var(--background-color-dark);
+  background-color: var(--background-color-inner-dark) !important;
 }
 
 .login-container img {
@@ -83,7 +84,7 @@
   font-size: 16px;
   width: 92%;
   /* background-color: var(--input-background-color-dark); */
-  /* color: inherit; */
+  color: inherit;
 }
 
 .login-container.dark input {
