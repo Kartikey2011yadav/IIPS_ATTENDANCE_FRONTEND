@@ -75,9 +75,10 @@ const Navbar = ({ theme, toggleTheme }) => {
           </p>
         </div>
         <div className="navbar-right-margin navbar-displayed">
-          <button onClick={toggleTheme} className="btn-toggle-theme">
-            Toggle Theme
-          </button>
+          <label className="switch">
+            <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
+            <span className="slider round"></span>
+          </label>
           <p className="navbar-logout" onClick={handleLogout}>
             <span className="logbut">
               <FaPowerOff size={15} /> Logout
@@ -122,9 +123,10 @@ const Navbar = ({ theme, toggleTheme }) => {
             </p>
           </li>
           <li>
-            <button onClick={toggleTheme} className="btn-toggle-theme">
-              Toggle Theme
-            </button>
+            <label className="switch">
+              <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
+              <span className="slider round"></span>
+            </label>
             <p
               className="navbar-logout navbar-logout-menu"
               onClick={() => {
