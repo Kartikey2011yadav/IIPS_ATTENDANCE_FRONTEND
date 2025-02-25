@@ -286,7 +286,16 @@
 .btn-toggle-theme:hover {
   background-color: var(--button-submit-hover-color-light);
 }
-
+@media (max-width:500px) {
+  .filter-controls {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .filter-controls .form-group{
+    width: 100%;
+  }
+}
 .dashboard-container.dark .btn-toggle-theme:hover {
   background-color: var(--button-submit-hover-color-dark);
 }

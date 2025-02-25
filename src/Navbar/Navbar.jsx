@@ -77,7 +77,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           </p>
         </div>
         <div className="navbar-right-margin navbar-displayed">
-        <p className="toggle-head">Toggle Theme
+        <p className="toggle-head">Toggle Theme:
           <label className="switch">
             <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
             <span className="slider round"></span>
@@ -102,7 +102,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         <ul type="none" className="navbar-sidebar-ul">
           <li>
             <p
-              className={`navbar-links ${
+              className={`navbar-links ${theme} ${
                 location.pathname === `/Dashboard` ? "active" : ""
               }`}
               onClick={() => {
@@ -115,7 +115,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           </li>
           <li>
             <p
-              className={`navbar-links ${
+              className={`navbar-links ${theme} ${
                 location.pathname === `/attendance_record` ? "active" : ""
               }`}
               onClick={() => {
@@ -126,16 +126,16 @@ const Navbar = ({ theme, toggleTheme }) => {
               Attendance Record
             </p>
           </li>
-          <hr />
+          
           <li>
-            <p className="toggle-head">Toggle Theme
+            <p className={`toggle-head ${theme}`} >Toggle Theme:
             <label className="switch">
               <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
               <span className="slider round"></span>
             </label>
             </p>
             <p
-              className="navbar-logout navbar-logout-menu"
+              className={`navbar-logout navbar-logout-menu ${theme}`}
               onClick={() => {
                 handleLogout();
                 responsive(); // close sidebar after logout

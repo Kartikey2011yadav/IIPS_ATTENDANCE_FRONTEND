@@ -356,7 +356,7 @@ const Record = () => {
             </div>
             <table className="record_summary-table">
               <thead>
-                <tr>
+                <tr className='record_table-header'>
                   <th>Roll Number</th>
                   <th>Student Name</th>
                   <th>Subject</th>

@@ -76,9 +76,9 @@ const AlertModal = ({ isOpen, onClose, onConfirm, message, iserror, isConfirm, e
             </div>
           </>
         ) : (
-          <button onClick={handleClose} className="alert_close-button">
-            Close
-          </button>
+          <button onClick={handleClose} className={`alert_close-button ${theme}`}>
+          Close
+      </button>
         )}
       </div>
     </Modal>

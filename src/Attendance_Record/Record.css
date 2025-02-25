@@ -116,6 +116,10 @@
 .record_btn-fetch:hover {
   background-color: var(--button-hover-color-light);
 }
+.record_table-header , .record_summary-table thead tr th{
+  background-color: #161616 !important;
+  color: white;
+}
 
 .record_container.dark .record_btn-fetch:hover {
   background-color: var(--button-hover-color-dark);
@@ -158,11 +162,9 @@
   background-color: var(--secondary-background-color-dark);
 }
 
-.record_summary-table tr:hover {
-  background-color: var(--secondary-background-color-light);
-}
 
-.record_container.dark .record_summary-table tr:hover {
+
+.record_container.dark {
   background-color: transparent;
 }
 

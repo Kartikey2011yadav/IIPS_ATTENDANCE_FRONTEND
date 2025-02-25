@@ -34,6 +34,7 @@
 
 .sign_up_Box_min.light {
   background-color: var(--background-main-color-light);
+
   color: var(--text-color-light);
 }
 
@@ -53,11 +54,12 @@
   border: 1px solid var(--border-color-light);
   border-radius: 8px;
   background-color: var(--background-main-color-light);
-  box-shadow: 0px 0px 10px white;
+  box-shadow: 0px 0px 10px var(--input-background-color-dark);
 }
 
 .Sign_up_Box.dark {
   background-color: var(--background-color-inner-dark);
+  box-shadow: 0px 0px 10px var(--background-color-light);
 }
 
 .Sign_up_Box img {

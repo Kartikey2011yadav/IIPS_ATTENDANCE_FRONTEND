@@ -127,7 +127,7 @@ const StudentDetail = () => {
         </div>
         
         {studentInfo && (
-          <div className="student-info-card">
+          <div className={`student-info-card ${theme}`}>
             <h3>Student Information</h3>
             <div className="student-info-grid">
               <div className="info-item">
@@ -162,7 +162,7 @@ const StudentDetail = () => {
           </div>
         )}
         
-        <div className="attendance-summary-card">
+        <div className={`attendance-summary-card ${theme}`}>
           <h3>Attendance Summary for {subject}</h3>
           <div className="summary-stats">
             <div className="stat-item">

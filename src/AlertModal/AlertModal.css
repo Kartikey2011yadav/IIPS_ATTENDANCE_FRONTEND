@@ -23,7 +23,7 @@
 }
 
 .alert_modal.light {
-  background-color: #fff;
+  background-color: #e6e6e6;
   color: #000;
 }
 
@@ -49,13 +49,20 @@
 }
 
 .alert_close-button {
-  background-color: rgb(163, 50, 50);
+  background-color: rgb(32, 32, 32);
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
 }
+.alert_close-button .dark {
+  background-color: #555 !important;
+}
+.alert_close-button .dark :hover {
+  background-color: #777 !important;
+}
+
 
 .alert_confirm-button {
   background-color: #555;
@@ -90,7 +97,7 @@
 }
 
 .alert_close-button:hover {
-  background-color: red;
+  background-color: rgb(23, 23, 23);
 }
 
 .alert_display-flex {
