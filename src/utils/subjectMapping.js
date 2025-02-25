@@ -138,26 +138,26 @@ export const subjectMapping = {
 
     // MBA_MS Semesters
     'mba_ms_1': [
-      { code: 'IM-203', name: 'Cost accounting' },
-      { code: 'IM-204A', name: 'Business Mathematics-II' },
-      { code: 'IM-210B', name: 'Programing using C++' },
-      { code: 'IM-214', name: 'Business Law' },
-      { code: 'IM-219', name: 'BCPD' },
-      { code: 'IM-217', name: 'Marketing Management' }
+      { code: 'IM-103', name: 'Cost accounting' },
+      { code: 'IM-104A', name: 'Business Mathematics-II' },
+      { code: 'IM-110B', name: 'Programing using C++' },
+      { code: 'IM-114', name: 'Business Law' },
+      { code: 'IM-119', name: 'BCPD' },
+      { code: 'IM-117', name: 'Marketing Management' }
     ],
     'mba_ms_2': [
-      { code: 'IC-205C', name: 'Object Oriented Programming Using C++' },
-      { code: 'IC-202C', name: 'Internet and Web Programming' },
-      { code: 'IC-204B', name: 'Digital Computer Organization' },
-      { code: 'IC-201', name: 'Mathematics - II' },
-      { code: 'IC-206D', name: 'Hindi' }
+      { code: 'IM-205C', name: 'Object Oriented Programming Using C++' },
+      { code: 'IM-202C', name: 'Internet and Web Programming' },
+      { code: 'IM-204B', name: 'Digital Computer Organization' },
+      { code: 'IM-201', name: 'Mathematics - II' },
+      { code: 'IM-206D', name: 'Hindi' }
     ],
     'mba_ms_3': [
-      { code: 'IC-311A', name: 'DBMS' },
-      { code: 'IC-305C', name: 'Data Structures' },
-      { code: 'IC-314', name: 'Probability and Statistics' },
-      { code: 'IC-315', name: 'Financial Accounting' },
-      { code: 'IC-312A', name: 'Chem & Env Sci' }
+      { code: 'IM-311A', name: 'DBMS' },
+      { code: 'IM-305C', name: 'Data Structures' },
+      { code: 'IM-314', name: 'Probability and Statistics' },
+      { code: 'IM-315', name: 'Financial Accounting' },
+      { code: 'IM-312A', name: 'Chem & Env Sci' }
     ],
     'mba_ms_4': [
       { code: 'IM-420', name: 'Purchase and Material Management' },
@@ -168,11 +168,11 @@ export const subjectMapping = {
       { code: 'IM-421 ', name: 'Business Finadamentals' }
     ],
     'mba_ms_5': [
-      { code: 'IC-504A', name: 'System Programming' },
-      { code: 'IC-501D', name: 'Programming with Python' },
-      { code: 'IC-502C', name: 'Introduction to Data Science' },
-      { code: 'IC-503A', name: 'Computer Graphics & Multimedia' },
-      { code: 'IC-512B', name: 'Computer Oriented Numerical Methods' }
+      { code: 'IM-504A', name: 'System Programming' },
+      { code: 'IM-501D', name: 'Programming with Python' },
+      { code: 'IM-502C', name: 'Introduction to Data Science' },
+      { code: 'IM-503A', name: 'Computer Graphics & Multimedia' },
+      { code: 'IM-512B', name: 'Computer Oriented Numerical Methods' }
     ],
     'mba_ms_6': [
       { code: 'IM-602B', name: 'Reserche Methodology' },
@@ -183,11 +183,11 @@ export const subjectMapping = {
       { code: 'IM-606', name: 'Project Management' }
     ],
     'mba_ms_7': [
-      { code: 'IC-702B', name: 'Computer Networks' },
-      { code: 'IC-701', name: 'Computer Architecture' },
-      { code: 'IC-703C', name: 'Artificial Intelligence' },
-      { code: 'IC-702A', name: 'Design & Analysis Of Algorithms' },
-      { code: 'IC-704B', name: 'Software Engineering' }
+      { code: 'IM-702B', name: 'Computer Networks' },
+      { code: 'IM-701', name: 'Computer Architecture' },
+      { code: 'IM-703C', name: 'Artificial Intelligence' },
+      { code: 'IM-702A', name: 'Design & Analysis Of Algorithms' },
+      { code: 'IM-704B', name: 'Software Engineering' }
     ],
     'mba_ms_8': [
       { code: 'IM-801B', name: 'Quality Management' },
@@ -204,18 +204,18 @@ export const subjectMapping = {
       { code: 'IM-810BA', name: 'Digital Analytics' },
       { code: 'IM-816HA', name: 'Performance and Planning Appraisal' },
       { code: 'IM-812BA', name: 'Big Data Analysis' },
-      { code: 'IM-817HA', name: 'HA IR and Labour Laws' },
+      { code: 'IM-817HA', name: 'IR and Labour Laws' },
       { code: 'IM-811BA', name: 'Predictive Modelling and pattern Discovery' },
     ],
     'mba_ms_9': [
-      { code: 'IC-905A', name: 'Object Oriented Analysis & Design' },
-      { code: 'IC-904A', name: 'Multimedia Systems' },
-      { code: 'IC-901A', name: 'Compiler Design' },
-      { code: 'IC-908A', name: 'Cloud Computing' },
-      { code: 'IC-909A', name: 'ITPM' }
+      { code: 'IM-905A', name: 'Object Oriented Analysis & Design' },
+      { code: 'IM-904A', name: 'Forcasting' },
+      { code: 'IM-901A', name: 'RDBMS' },
+      { code: 'IM-908A', name: 'Cloud Computing' },
+      { code: 'IM-909A', name: 'ITPM' }
     ],
     'mba_ms_10' : [
-      { code: 'IC-1001', name: 'Thesis/Project Work' }
+      { code: 'IM-1001', name: 'Thesis/Project Work' }
     ],
 
       // MBA_ESHIP Semesters
@@ -235,18 +235,18 @@ export const subjectMapping = {
         { code: 'ES-203A', name: 'Fundamantals of Finance-II' }
       ],
       'mba_es_3': [
-        { code: 'IC-311A', name: 'DBMS' },
-        { code: 'IC-305C', name: 'Data Structures' },
-        { code: 'IC-314', name: 'Probability and Statistics' },
-        { code: 'IC-315', name: 'Financial Accounting' },
-        { code: 'IC-312A', name: 'Chem & Env Sci' }
+        { code: 'ES-311A', name: 'DBMS' },
+        { code: 'ES-305C', name: 'Accounts' },
+        { code: 'ES-314', name: 'Probability and Statistics' },
+        { code: 'ES-315', name: 'Financial Accounting' },
+        { code: 'ES-312A', name: 'Business Analytics' }
       ],
       'mba_es_4': [
         { code: 'ES-401A', name: 'Business Legislation' },
         { code: 'ES-404A', name: 'International Business' },
         { code: 'ES-408A', name: 'Logistics And Supply Chain Management' },
         { code: 'ES-410', name: 'Management Information Systems' },
-        { code: 'ES-411', name: 'Business Analytics' },
+        { code: 'ES-411', name: 'Business Analytics-II' },
         { code: 'ES-412 ', name: 'Business Model Development' }
       ],
 
@@ -270,11 +270,11 @@ export const subjectMapping = {
         { code: 'APR-212', name: 'Client Servicing and Account Planning' }
       ],
       'mba_apr_3': [
-        { code: 'IC-311A', name: 'DBMS' },
-        { code: 'IC-305C', name: 'Data Structures' },
-        { code: 'IC-314', name: 'Probability and Statistics' },
-        { code: 'IC-315', name: 'Financial Accounting' },
-        { code: 'IC-312A', name: 'Chem & Env Sci' }
+        { code: 'APR-311A', name: 'DBMS' },
+        { code: 'APR-305C', name: 'MICRO ECONOMICS' },
+        { code: 'APR-314', name: 'Probability and Statistaprs' },
+        { code: 'APR-315', name: 'Financial Accounting' },
+        { code: 'APR-312A', name: 'Chem & Env Sci' }
       ],
       'mba_apr_4': [
         { code: 'APR-406A', name: 'BCPD' },
@@ -287,7 +287,7 @@ export const subjectMapping = {
   
 
        // MBA(TOURISM) Semesters
-   'mba_tm_2': [
+   'mba_tm_1': [
   { code: 'TM-106', name: 'Tourism Industry' },
   { code: 'TM-108', name: 'Language Proficiency' },
   { code: 'TM-103', name: 'Language Proficiency (English)' },
@@ -296,18 +296,18 @@ export const subjectMapping = {
   { code: 'TM-101', name: 'Fundamentals of Mgt.' }
 ],
     'mba_tm_2': [
-      { code: 'IC-205C', name: 'Object Oriented Programming Using C++' },
-      { code: 'IC-202C', name: 'Internet and Web Programming' },
-      { code: 'IC-204B', name: 'Digital Computer Organization' },
-      { code: 'IC-201', name: 'Mathematics - II' },
-      { code: 'IC-206D', name: 'Hindi' }
+      { code: 'TM-205C', name: 'Object Oriented Programming Using C++' },
+      { code: 'TM-202C', name: 'Internet and Web Tourism' },
+      { code: 'TM-204B', name: 'Communication' },
+      { code: 'TM-201', name: 'Mathematics - II' },
+      { code: 'TM-206D', name: 'Hindi' }
     ],
     'mba_tm_3': [
-      { code: 'IC-311A', name: 'DBMS' },
-      { code: 'IC-305C', name: 'Data Structures' },
-      { code: 'IC-314', name: 'Probability and Statistics' },
-      { code: 'IC-315', name: 'Financial Accounting' },
-      { code: 'IC-312A', name: 'Chem & Env Sci' }
+      { code: 'TM-311A', name: 'DBMS' },
+      { code: 'TM-305C', name: 'ADVERTISING' },
+      { code: 'TM-314', name: 'Probability and Statistics' },
+      { code: 'TM-315', name: 'Financial Accounting' },
+      { code: 'TM-312A', name: 'Chem & Env Sci' }
     ],
     'mba_tm_4': [
       { code: 'TM-401', name: 'BCPD' },
@@ -318,11 +318,11 @@ export const subjectMapping = {
       { code: 'TM-406', name: 'Sales and Distribution Mangement' }
     ],
     'mba_tm_5': [
-      { code: 'IC-504A', name: 'System Programming' },
-      { code: 'IC-501D', name: 'Programming with Python' },
-      { code: 'IC-502C', name: 'Introduction to Data Science' },
-      { code: 'IC-503A', name: 'Computer Graphics & Multimedia' },
-      { code: 'IC-512B', name: 'Computer Oriented Numerical Methods' }
+      { code: 'TM-504A', name: 'System Programming' },
+      { code: 'TM-501D', name: 'Programming with Python' },
+      { code: 'TM-502C', name: 'Introduction to Data Science' },
+      { code: 'TM-503A', name: 'Computer Graphics & Multimedia' },
+      { code: 'TM-512B', name: 'Computer Oriented Numerical Methods' }
     ],
     'mba_tm_6': [
       { code: 'TM-601', name: 'Business Environment' },
@@ -333,11 +333,11 @@ export const subjectMapping = {
       { code: 'TM-608', name: 'Travel Documantation' }
     ],
     'mba_tm_7': [
-      { code: 'IC-702B', name: 'Computer Networks' },
-      { code: 'IC-701', name: 'Computer Architecture' },
-      { code: 'IC-703C', name: 'Artificial Intelligence' },
-      { code: 'IC-702A', name: 'Design & Analysis Of Algorithms' },
-      { code: 'IC-704B', name: 'Software Engineering' }
+      { code: 'TM-702B', name: 'Festive tourism' },
+      { code: 'TM-701', name: 'Business Architecture' },
+      { code: 'TM-703C', name: 'Artifciial Intelligence in Tourism' },
+      { code: 'TM-702A', name: 'Consumer Behaviours' },
+      { code: 'TM-704B', name: 'Management information system' }
     ],
     'mba_tm_8': [
       { code: 'TM-801', name: 'Enterpreneurship' },
@@ -348,18 +348,18 @@ export const subjectMapping = {
       { code: 'TM-808', name: 'International Management in Tourism' }
     ],
     'mba_tm_9': [
-      { code: 'IC-905A', name: 'Object Oriented Analysis & Design' },
-      { code: 'IC-904A', name: 'Multimedia Systems' },
-      { code: 'IC-901A', name: 'Compiler Design' },
-      { code: 'IC-908A', name: 'Cloud Computing' },
-      { code: 'IC-909A', name: 'ITPM' }
+      { code: 'TM-905A', name: 'Object Oriented Analysis & Design' },
+      { code: 'TM-904A', name: 'Multimedia Systems' },
+      { code: 'TM-901A', name: 'Tourism Product Of India-II' },
+      { code: 'TM-908A', name: 'Eco Tourism' },
+      { code: 'TM-909A', name: 'ITPM' }
     ],
     'mba_tm_10' : [
-      { code: 'IC-1001', name: 'Thesis/Project Work' }
+      { code: 'TM-1001', name: 'Project Work' }
     ],
 
 
-        // B COM Semesters
+        // B.COM Semesters
         'bcom_1': [
           { code: 'IB-101A', name: 'Principles of Managemen' },
           { code: 'IB-103B', name: 'Financial Accounting - I' },
@@ -377,11 +377,11 @@ export const subjectMapping = {
           { code: 'IB-211NE', name: 'Financial Literacy '}
         ],
         'bcom_3': [
-          { code: 'IC-311A', name: 'DBMS' },
-          { code: 'IC-305C', name: 'Data Structures' },
-          { code: 'IC-314', name: 'Probability and Statistics' },
-          { code: 'IC-315', name: 'Financial Accounting' },
-          { code: 'IC-312A', name: 'Chem & Env Sci' }
+          { code: 'IB-311A', name: 'SQL' },
+          { code: 'IB-305C', name: 'Marketing management' },
+          { code: 'IB-314', name: 'Probability and Statistics' },
+          { code: 'IB-315', name: 'Financial Accounting' },
+          { code: 'IB-312A', name: 'Chem & Env Sci' }
         ],
         'bcom_4': [
           { code: 'IB-401', name: 'Corporate Accounting / B-402NE Corporate Environment' },
@@ -391,11 +391,11 @@ export const subjectMapping = {
           { code: 'IB-406', name: 'Accounting Information System and Package' }
         ],
         'bcom_5': [
-          { code: 'IC-504A', name: 'System Programming' },
-          { code: 'IC-501D', name: 'Programming with Python' },
-          { code: 'IC-502C', name: 'Introduction to Data Science' },
-          { code: 'IC-503A', name: 'Computer Graphics & Multimedia' },
-          { code: 'IC-512B', name: 'Computer Oriented Numerical Methods' }
+          { code: 'IB-504A', name: 'System Programming' },
+          { code: 'IB-501D', name: 'Programming with Python' },
+          { code: 'IB-502C', name: 'Cost accounting' },
+          { code: 'IB-503A', name: 'E-commerce' },
+          { code: 'IB-512B', name: 'Computer Oriented Numerical Methods' }
         ],
         'bcom_6': [
           { code: 'IB-601', name: 'Secretarial Practice' },
@@ -405,11 +405,11 @@ export const subjectMapping = {
           { code: 'IB-606NE', name: 'Corporate Tax' }
         ],
         'bcom_7': [
-          { code: 'IC-702B', name: 'Computer Networks' },
-          { code: 'IC-701', name: 'Computer Architecture' },
-          { code: 'IC-703C', name: 'Artificial Intelligence' },
-          { code: 'IC-702A', name: 'Design & Analysis Of Algorithms' },
-          { code: 'IC-704B', name: 'Software Engineering' }
+          { code: 'IB-702B', name: 'Networks Management' },
+          { code: 'IB-701', name: 'Audit' },
+          { code: 'IB-703C', name: 'Artificial Intelligence' },
+          { code: 'IB-702A', name: 'Design & Analysis Of Algorithms' },
+          { code: 'IB-704B', name: 'Corporate English' }
         ],
         'bcom_8': [
           { code: 'IB-801N', name: 'Stratigic Finacial Management' },
@@ -420,11 +420,11 @@ export const subjectMapping = {
 
          // MBAMS(2)Semesters
          'mba_ft_1': [
-          { code: 'IC-101A', name: 'Mathematics-I' },
-          { code: 'IC-103B', name: 'Digital Electronics' },
-          { code: 'IC-104C', name: 'Problem solving using "C"' },
-          { code: 'IC-106C', name: 'English & Communicative Skills' },
-          { code: 'IC-105', name: 'PC Software' }
+          { code: 'FT-101A', name: 'Mathematics-I' },
+          { code: 'FT-103B', name: 'Consumer protection' },
+          { code: 'FT-104C', name: 'Supply chain management' },
+          { code: 'FT-106C', name: 'English & Communicative Skills' },
+          { code: 'FT-105', name: 'Discovery' }
         ],
         'mba_ft_2': [
           { code: 'FT-201', name: 'Principles of Management' },
@@ -436,11 +436,11 @@ export const subjectMapping = {
           { code: 'FT-205A', name: 'Business Statistics and Database Management' }
         ],
         'mba_ft_3': [
-          { code: 'IC-311A', name: 'DBMS' },
-          { code: 'IC-305C', name: 'Data Structures' },
-          { code: 'IC-314', name: 'Probability and Statistics' },
-          { code: 'IC-315', name: 'Financial Accounting' },
-          { code: 'IC-312A', name: 'Chem & Env Sci' }
+          { code: 'FT-311A', name: 'DBMS' },
+          { code: 'FT-305C', name: 'Business Methodology-II' },
+          { code: 'FT-314', name: 'Probability and Statistics' },
+          { code: 'FT-315', name: 'Financial Accounting' },
+          { code: 'FT-312A', name: 'Chem & Env Sci' }
         ],
         'mba_ft_4': [
           { code: 'FT-405A', name: 'Production & Brand Management' },
@@ -453,7 +453,7 @@ export const subjectMapping = {
   { code: 'FT-418A ', name: 'Digital Analysis' },
   { code: 'FT-417BA', name: 'Performance Planning & Appraisal ' },
   { code: 'FT-415A', name: 'Advanced Pertformance Dynamics' },
-  { code: 'FT-416A', name: 'Patent, Discovery, Laws' },
+  { code: 'FT-416A', name: 'Patent,  Laws' },
   { code: 'FT-417BA', name: 'Big Data Analysis' },
   { code: 'FT-415A', name: 'Predictive Modelling and pattern Discovery' },
         ],
