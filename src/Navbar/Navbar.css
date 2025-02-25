@@ -24,6 +24,7 @@
   font-size: large;
   box-shadow: none;
   position: relative;
+  border-radius: 10px;
 }
 
 .navbar.light {
@@ -68,8 +69,10 @@
   justify-content: center;
   font-size: large;
   font-weight: 600;
-  margin-top: 5px;
+  margin-top: 18px;
   cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .navbar-links.active {
@@ -89,7 +92,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  margin-top: 10px;
+  margin-top: 15px;
   /* background-color: var(--navbar-logout-background-color-light); */
   transition: 0.3s all;
 }
@@ -169,6 +172,7 @@
     justify-content: left;
     border: none;
     border-radius: 0;
+    margin-top: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.253);
   }
 
@@ -180,6 +184,9 @@
     display: block;
     height: 100vh;
     overflow-y: auto;
+  }
+  .switch {
+    margin-left: 20px;
   }
 }
 

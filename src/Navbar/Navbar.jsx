@@ -122,11 +122,14 @@ const Navbar = ({ theme, toggleTheme }) => {
               Attendance Record
             </p>
           </li>
+          <hr />
           <li>
+            <p className="toggle-head">Toggle Theme
             <label className="switch">
               <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
               <span className="slider round"></span>
             </label>
+            </p>
             <p
               className="navbar-logout navbar-logout-menu"
               onClick={() => {

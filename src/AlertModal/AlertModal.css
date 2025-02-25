@@ -49,7 +49,7 @@
 }
 
 .alert_close-button {
-  background-color: #555;
+  background-color: rgb(163, 50, 50);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -90,7 +90,7 @@
 }
 
 .alert_close-button:hover {
-  background-color: #777;
+  background-color: red;
 }
 
 .alert_display-flex {

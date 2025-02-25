@@ -119,8 +119,10 @@ const StudentDetail = () => {
       />
       
       <div className="student-detail-content">
+        <button onClick={handleBackToRecords} className="student-detail-back-btn">Back to Records</button>
+        <br />
+        <br />
         <div className="student-detail-header">
-          <button onClick={handleBackToRecords} className="student-detail-back-btn">Back to Records</button>
           <h2>Student Attendance Details</h2>
         </div>
         
