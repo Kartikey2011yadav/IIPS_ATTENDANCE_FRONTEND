@@ -109,7 +109,7 @@
 }
 
 .notification-info.light {
-  background-color: var(--background-color-light);
+  background-color: #e4e4e4;
 }
 
 .notification-info.dark {

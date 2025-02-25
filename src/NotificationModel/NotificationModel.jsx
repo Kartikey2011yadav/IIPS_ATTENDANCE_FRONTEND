@@ -73,7 +73,7 @@ const NotificationModal = ({ isOpen, onClose, attendanceSummary }) => {
               <span className="notification-threshold-value">{threshold}%</span>
             </div>
             
-            <div className="notification-info">
+            <div className={`notification-info ${theme}`}>
               <p>Students below threshold: <strong>{studentsBelow}</strong></p>
               <p className="notification-warning">
                 {studentsBelow > 0 ? 
@@ -91,7 +91,7 @@ const NotificationModal = ({ isOpen, onClose, attendanceSummary }) => {
               Cancel
             </button>
             <button 
-              className="notification-send-btn" 
+              className={`notification-send-btn `}
               onClick={handleSendNotifications}
               disabled={sending || studentsBelow === 0}
             >

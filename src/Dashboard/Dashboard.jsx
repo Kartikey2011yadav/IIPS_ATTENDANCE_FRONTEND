@@ -196,6 +196,10 @@ const Dashboard = () => {
               <option value="">Select Course</option>
               <option value="MTECH">MTECH</option>
               <option value="MCA">MCA</option>
+              <option value="MBA(MS)">MBA(MS)</option>
+              <option value="MBA(ESHIP)">MBA(ESHIP)</option>
+              <option value="MBA(APR)">MBA(APR)</option>
+              <option value="MBA(TM)">MBA(TM)</option>
             </select>
           </div>
           
