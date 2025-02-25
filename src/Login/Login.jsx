@@ -17,6 +17,7 @@ function Login() {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Loading state
   const [d, setDisplay] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
   const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
@@ -70,7 +71,7 @@ function Login() {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/teacher/verify-otp`, { email, otp })
       .then((response) => {
-        const { sessionId, message, teacherId, name, email, mobileNumber,photo } =
+        const { sessionId, message, teacherId, name, email, mobileNumber, photo } =
           response.data;
 
         // Set modal state first
@@ -111,8 +112,8 @@ function Login() {
   };
 
   return (
-    <div className="lpgin-container-main">
-      <div className="login-container">
+    <div className={`login-container-main ${theme}`}>
+      <div className={`login-container ${theme}`}>
         <img src={logo} alt="Logo" />
         <h2>Teacher : Login</h2>
         <form onSubmit={showOtp ? handleSubmit : handleLogin}>
@@ -180,7 +181,7 @@ function Login() {
             Forgot Password?
           </p>
           <button type="submit" disabled={isLoading}>
-            {isLoading ? "Submiting..." : showOtp ? "Submit" : "Next"}
+            {isLoading ? "Submitting..." : showOtp ? "Submit" : "Next"}
           </button>
           <p
             className="signup_text_redirect"

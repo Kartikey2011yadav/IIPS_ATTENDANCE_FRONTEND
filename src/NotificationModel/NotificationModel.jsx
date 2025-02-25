@@ -9,6 +9,7 @@ const NotificationModal = ({ isOpen, onClose, attendanceSummary }) => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [isError, setIsError] = useState(false);
+  const theme = localStorage.getItem('theme') || 'light'; // Initialize theme from local storage
 
   if (!isOpen) return null;
 
@@ -48,8 +49,8 @@ const NotificationModal = ({ isOpen, onClose, attendanceSummary }) => {
 
   return (
     <>
-      <div className="notification-modal-overlay">
-        <div className="notification-modal">
+      <div className={`notification-modal-overlay ${theme}`}>
+        <div className={`notification-modal ${theme}`}>
           <div className="notification-modal-header">
             <h3>Send Low Attendance Notifications</h3>
             <button className="notification-modal-close" onClick={onClose}>×</button>

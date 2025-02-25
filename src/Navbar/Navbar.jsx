@@ -5,27 +5,38 @@ import { FaPowerOff } from "react-icons/fa";
 import "./Navbar.css";
 import defaultPhoto from "../Assets/profile_photo.png";
 import axios from "axios";
-const Navbar = () => {
+
+const Navbar = ({ theme, toggleTheme }) => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  
-  const [photo,setPhoto] = useState("");
-  useEffect(()=>
-    {
-      axios.post(`${process.env.REACT_APP_BACKEND_URL}/teacher/getteacherDetails`,{teacherId: localStorage.getItem("teacherId")})
-      .then((res)=>{setPhoto(localStorage.getItem("photo") || res.data.teacher.photo || defaultPhoto)}).catch((err)=>{console.error(err)});
-    },[]);
+  const [photo, setPhoto] = useState("");
+  useEffect(() => {
+    axios
+      .post(`${process.env.REACT_APP_BACKEND_URL}/teacher/getteacherDetails`, {
+        teacherId: localStorage.getItem("teacherId"),
+      })
+      .then((res) => {
+        setPhoto(
+          localStorage.getItem("photo") || res.data.teacher.photo || defaultPhoto
+        );
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   const responsive = () => {
     const sidebar = document.getElementsByClassName("navbar-sidebar")[0];
     if (!open) {
       sidebar.style.transform = "translateX(0%)";
       setOpen(true);
+      document.body.style.overflow = "hidden";
     } else {
       sidebar.style.transform = "translateX(100%)";
       setOpen(false);
+      document.body.style.overflow = "auto";
     }
   };
 
@@ -36,13 +47,11 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar">
-        <div className="navbar-contents navbar-left-margin"
-         
-         >
+      <div className={`navbar ${theme}`}>
+        <div className="navbar-contents navbar-left-margin">
           <img
             className="pfp"
-            src={defaultPhoto}
+            src={photo}
             width="35"
             height="35"
             alt="profile"
@@ -50,14 +59,13 @@ const Navbar = () => {
           <div>{localStorage.getItem("name")}</div>
         </div>
         <div className="navbar-contents navbar-displayed">
-
-        <p
+          <p
             className={`navbar-links ${
               location.pathname === `/Dashboard` ? "active" : ""
             }`}
             onClick={() => navigate(`/Dashboard`)}
           >
-          Dashboard
+            Dashboard
           </p>
           <p
             className={`navbar-links ${
@@ -67,12 +75,18 @@ const Navbar = () => {
           >
             Attendance Record
           </p>
-         
-         
         </div>
         <div className="navbar-right-margin navbar-displayed">
+        <p className="toggle-head">Toggle Theme
+          <label className="switch">
+            <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
+            <span className="slider round"></span>
+          </label>
+          </p>
           <p className="navbar-logout" onClick={handleLogout}>
-          <span className="logbut"> <FaPowerOff size={15}/>  Logout</span> 
+            <span className="logbut">
+              <FaPowerOff size={15} /> Logout
+            </span>
           </p>
         </div>
         <div className="navbar-menu navbar-right-margin">
@@ -84,9 +98,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="navbar-sidebar">
+      <div className={`navbar-sidebar ${theme}`}>
         <ul type="none" className="navbar-sidebar-ul">
-        <li>
+          <li>
             <p
               className={`navbar-links ${
                 location.pathname === `/Dashboard` ? "active" : ""
@@ -96,7 +110,7 @@ const Navbar = () => {
                 responsive(); // close sidebar after click
               }}
             >
-            Dashboard
+              Dashboard
             </p>
           </li>
           <li>
@@ -112,9 +126,14 @@ const Navbar = () => {
               Attendance Record
             </p>
           </li>
-        
-     
+          <hr />
           <li>
+            <p className="toggle-head">Toggle Theme
+            <label className="switch">
+              <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
+              <span className="slider round"></span>
+            </label>
+            </p>
             <p
               className="navbar-logout navbar-logout-menu"
               onClick={() => {
@@ -122,7 +141,9 @@ const Navbar = () => {
                 responsive(); // close sidebar after logout
               }}
             >
-           <span className="logbut"> <FaPowerOff size={15}/>  Logout</span>
+              <span className="logbut">
+                <FaPowerOff size={15} /> Logout
+              </span>
             </p>
           </li>
         </ul>

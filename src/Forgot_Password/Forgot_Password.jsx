@@ -12,6 +12,7 @@ const ForgotPassword = () => {
     const [loading, setLoading] = useState(true);
     const [modalIsOpen, setModalIsOpen] = useState(false); // Modal state
     const [isError, setIsError] = useState(false); // Error state for modal
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -41,10 +42,16 @@ const ForgotPassword = () => {
         navigate("/"); 
     };
 
+    const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme); // Save theme to local storage
+    };
+
     return (
-        <div className="forgot-container-main">
+        <div className={`forgot-container-main ${theme}`}>
             {loading ? (<Loader />) : (<>
-                <div className="forgot-container">
+                <div className={`forgot-container ${theme}`}>
                     <img alt="Logo" src={Logo} />
                     <h2>Forgot Your Password?</h2>
                     <form onSubmit={handleSubmit}>
@@ -58,7 +65,6 @@ const ForgotPassword = () => {
                             required
                         />
                         <button type="submit">Submit</button>
-                       
                         <p className="back_to_login" onClick={handleBackToLoginPage}>Back to Login page</p>
                     </form>
 
