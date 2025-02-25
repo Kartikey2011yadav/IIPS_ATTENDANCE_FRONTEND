@@ -18,7 +18,8 @@ const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [isError, setIsError] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [availableSemesters, setAvailableSemesters] = useState([]);
 
   // Get current date in IST format
   const getCurrentDateIST = () => {
@@ -31,9 +32,50 @@ const Dashboard = () => {
 
   const [attendanceDate, setAttendanceDate] = useState(getCurrentDateIST());
 
+  // Map from display course names to subjectMapping keys
+  const courseKeyMap = {
+    'MTECH': 'mtech',
+    'MCA': 'mca',
+    'MBA(MS)': 'mba_sem',
+    'MBA(ESHIP)': 'mba_es',
+    'MBA(APR)': 'mba_apr',
+    'MBA(TM)': 'mba_tm',
+    'MBA(FT)': 'mba_ft'
+  };
+
+  // Function to get available semesters for a course
+  const getAvailableSemesters = (courseKey) => {
+    if (!courseKey) return [];
+    
+    const availableSems = [];
+    for (let i = 1; i <= 10; i++) {
+      const key = `${courseKey}_${i}`;
+      if (subjectMapping[key]) {
+        availableSems.push(i);
+      }
+    }
+    return availableSems;
+  };
+
+  useEffect(() => {
+    if (course) {
+      const courseKey = courseKeyMap[course];
+      const semesters = getAvailableSemesters(courseKey);
+      setAvailableSemesters(semesters);
+      
+      // Reset semester if the current one isn't available
+      if (semester && !semesters.includes(parseInt(semester))) {
+        setSemester('');
+      }
+    } else {
+      setAvailableSemesters([]);
+    }
+  }, [course]);
+
   useEffect(() => {
     if (course && semester) {
-      const key = `${course.toLowerCase()}_${semester}`;
+      const courseKey = courseKeyMap[course];
+      const key = `${courseKey}_${semester}`;
       setSubjects(subjectMapping[key] || []);
       setSubject('');
     } else {
@@ -44,6 +86,7 @@ const Dashboard = () => {
 
   const handleCourseChange = (e) => {
     setCourse(e.target.value);
+    setSemester('');
     setStudents([]);
   };
 
@@ -156,21 +199,17 @@ const Dashboard = () => {
   const toggleTheme = () => {
     if(theme === 'light' || !theme){
       setTheme('dark');
-      localStorage.setItem('theme', 'dark'); // Initialize theme in local storage
+      localStorage.setItem('theme', 'dark');
     }
     else{
       setTheme('light');
-      localStorage.setItem('theme', 'light'); // Initialize theme in local storage
+      localStorage.setItem('theme', 'light');
     }
   };
 
   return (
     <div className={`dashboard-container ${theme}`}>
       <Navbar theme={theme} toggleTheme={toggleTheme}/>
-      
-      {/* <button onClick={toggleTheme} className="btn-toggle-theme">
-        Toggle Theme
-      </button> */}
       
       {loading && <Loader />}
       
@@ -200,6 +239,7 @@ const Dashboard = () => {
               <option value="MBA(ESHIP)">MBA(ESHIP)</option>
               <option value="MBA(APR)">MBA(APR)</option>
               <option value="MBA(TM)">MBA(TM)</option>
+              <option value="MBA(FT)">MBA(FT)</option>
             </select>
           </div>
           
@@ -210,9 +250,10 @@ const Dashboard = () => {
               value={semester} 
               onChange={handleSemesterChange}
               className="form-select"
+              disabled={!course}
             >
               <option value="">Select Semester</option>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(sem => (
+              {availableSemesters.map(sem => (
                 <option key={sem} value={sem}>{sem}</option>
               ))}
             </select>
@@ -267,7 +308,6 @@ const Dashboard = () => {
                   <th>Attendance</th>
                   <th>Roll Number</th>
                   <th>Student Name</th>
-                 
                 </tr>
               </thead>
               <tbody>
@@ -280,12 +320,10 @@ const Dashboard = () => {
                           checked={attendanceMap[student._id] || false}
                           onChange={() => handleAttendanceChange(student._id)}
                         />
-                        
                       </label>
                     </td>
                     <td>{student.rollNumber}</td>
                     <td>{student.fullName}</td>
-                    
                   </tr>
                 ))}
               </tbody>

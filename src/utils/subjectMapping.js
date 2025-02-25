@@ -137,86 +137,95 @@ export const subjectMapping = {
     ],
 
     // MBA_MS Semesters
-    'mba_ms_1': [
-      { code: 'IM-103', name: 'Cost accounting' },
-      { code: 'IM-104A', name: 'Business Mathematics-II' },
-      { code: 'IM-110B', name: 'Programing using C++' },
-      { code: 'IM-114', name: 'Business Law' },
-      { code: 'IM-119', name: 'BCPD' },
-      { code: 'IM-117', name: 'Marketing Management' }
-    ],
-    'mba_ms_2': [
-      { code: 'IM-205C', name: 'Object Oriented Programming Using C++' },
-      { code: 'IM-202C', name: 'Internet and Web Programming' },
-      { code: 'IM-204B', name: 'Digital Computer Organization' },
-      { code: 'IM-201', name: 'Mathematics - II' },
-      { code: 'IM-206D', name: 'Hindi' }
-    ],
-    'mba_ms_3': [
-      { code: 'IM-311A', name: 'DBMS' },
-      { code: 'IM-305C', name: 'Data Structures' },
-      { code: 'IM-314', name: 'Probability and Statistics' },
-      { code: 'IM-315', name: 'Financial Accounting' },
-      { code: 'IM-312A', name: 'Chem & Env Sci' }
-    ],
-    'mba_ms_4': [
-      { code: 'IM-420', name: 'Purchase and Material Management' },
-      { code: 'IM-414', name: 'Financial Management - I' },
-      { code: 'IM-416A', name: 'Business Statistics - II' },
-      { code: 'IM-401C', name: 'Marketing Strategies' },
-      { code: 'IM-406B', name: 'Macro Econimics' },
-      { code: 'IM-421 ', name: 'Business Finadamentals' }
-    ],
-    'mba_ms_5': [
-      { code: 'IM-504A', name: 'System Programming' },
-      { code: 'IM-501D', name: 'Programming with Python' },
-      { code: 'IM-502C', name: 'Introduction to Data Science' },
-      { code: 'IM-503A', name: 'Computer Graphics & Multimedia' },
-      { code: 'IM-512B', name: 'Computer Oriented Numerical Methods' }
-    ],
-    'mba_ms_6': [
-      { code: 'IM-602B', name: 'Reserche Methodology' },
-      { code: 'IM-613', name: 'Business Envirinment' },
-      { code: 'IM-603A', name: 'Forcasting Techniques' },
-      { code: 'IM-601E', name: 'Operations Research' },
-      { code: 'IM-604B', name: 'Inderect Taxes' },
-      { code: 'IM-606', name: 'Project Management' }
-    ],
-    'mba_ms_7': [
-      { code: 'IM-702B', name: 'Computer Networks' },
-      { code: 'IM-701', name: 'Computer Architecture' },
-      { code: 'IM-703C', name: 'Artificial Intelligence' },
-      { code: 'IM-702A', name: 'Design & Analysis Of Algorithms' },
-      { code: 'IM-704B', name: 'Software Engineering' }
-    ],
-    'mba_ms_8': [
-      { code: 'IM-801B', name: 'Quality Management' },
-      { code: 'IM-815MA', name: 'Product And Brand Mag.' },
-      { code: 'IM-816FB', name: 'Bank Management' },
-      { code: 'IM-816MA', name: 'Strategic & Modeling in Marketing' },
-      { code: 'IM-820FB', name: 'Corporate Valuation and Restructuring' },
-      { code: 'IM-817MA', name: 'Service Marketing' },
-      { code: 'IM-821FB', name: 'Finacial Planning and Wealth Management' },
-      { code: 'IM-815FA', name: 'International Finance' },
-      { code: 'IM-818FA', name: 'Corporate Tax' },
-      { code: 'IM-816FA', name: 'Project Finance' },
-      { code: 'IM-818HA', name: 'OD' },
-      { code: 'IM-810BA', name: 'Digital Analytics' },
-      { code: 'IM-816HA', name: 'Performance and Planning Appraisal' },
-      { code: 'IM-812BA', name: 'Big Data Analysis' },
-      { code: 'IM-817HA', name: 'IR and Labour Laws' },
-      { code: 'IM-811BA', name: 'Predictive Modelling and pattern Discovery' },
-    ],
-    'mba_ms_9': [
-      { code: 'IM-905A', name: 'Object Oriented Analysis & Design' },
-      { code: 'IM-904A', name: 'Forcasting' },
-      { code: 'IM-901A', name: 'RDBMS' },
-      { code: 'IM-908A', name: 'Cloud Computing' },
-      { code: 'IM-909A', name: 'ITPM' }
-    ],
-    'mba_ms_10' : [
-      { code: 'IM-1001', name: 'Thesis/Project Work' }
-    ],
+'mba_sem_1': [
+    { code: 'IM-101', name: 'Principles of Management' },
+    { code: 'IM-103', name: 'Cost Accounting' },
+    { code: 'IM-104A', name: 'Business Mathematics-I' },
+    { code: 'IM-114', name: 'Business Law' },
+    { code: 'IM-117', name: 'Marketing Management' },
+    { code: 'IM-119', name: 'Business Communication & Professional Development' }
+  ],
+  'mba_sem_2': [
+    { code: 'IM-201', name: 'Mathematics - II' },
+    { code: 'IM-202', name: 'Management Information Systems' },
+    { code: 'IM-203', name: 'Organizational Behavior' },
+    { code: 'IM-204', name: 'Business Economics' },
+    { code: 'IM-206', name: 'Business Communication' }
+  ],
+  'mba_sem_3': [
+    { code: 'IM-301', name: 'Operations Management' },
+    { code: 'IM-311', name: 'Database Management Systems' },
+    { code: 'IM-314', name: 'Probability and Statistics' },
+    { code: 'IM-315', name: 'Financial Accounting' },
+    { code: 'IM-317', name: 'Human Resource Management' }
+  ],
+  'mba_sem_4': [
+    { code: 'IM-401C', name: 'Marketing Strategies' },
+    { code: 'IM-406B', name: 'Macro Economics' },
+    { code: 'IM-414', name: 'Financial Management - I' },
+    { code: 'IM-416A', name: 'Business Statistics - II' },
+    { code: 'IM-420', name: 'Purchase and Material Management' },
+    { code: 'IM-421', name: 'Business Fundamentals' }
+  ],
+  'mba_sem_5': [
+    { code: 'IM-501', name: 'Strategic Management' },
+    { code: 'IM-502', name: 'Business Analytics' },
+    { code: 'IM-503', name: 'Financial Management - II' },
+    { code: 'IM-505', name: 'International Business' },
+    { code: 'IM-507', name: 'Digital Marketing' }
+  ],
+  'mba_sem_6': [
+    { code: 'IM-601E', name: 'Operations Research' },
+    { code: 'IM-602B', name: 'Research Methodology' },
+    { code: 'IM-603A', name: 'Forecasting Techniques' },
+    { code: 'IM-604B', name: 'Indirect Taxes' },
+    { code: 'IM-606', name: 'Project Management' },
+    { code: 'IM-613', name: 'Business Environment' }
+  ],
+  'mba_sem_7': [
+    { code: 'IM-701', name: 'Entrepreneurship Development' },
+    { code: 'IM-702', name: 'Corporate Governance & Ethics' },
+    { code: 'IM-703', name: 'Business Intelligence' },
+    { code: 'IM-704', name: 'Risk Management' },
+    { code: 'IM-705', name: 'Leadership & Change Management' }
+  ],
+  'mba_sem_8': [
+    // Finance specialization
+    { code: 'IM-815FA', name: 'International Finance' },
+    { code: 'IM-816FA', name: 'Project Finance' },
+    { code: 'IM-816FB', name: 'Bank Management' },
+    { code: 'IM-818FA', name: 'Corporate Tax' },
+    { code: 'IM-820FB', name: 'Corporate Valuation and Restructuring' },
+    { code: 'IM-821FB', name: 'Financial Planning and Wealth Management' },
+    
+    // Marketing specialization
+    { code: 'IM-815MA', name: 'Product And Brand Management' },
+    { code: 'IM-816MA', name: 'Strategic & Modeling in Marketing' },
+    { code: 'IM-817MA', name: 'Service Marketing' },
+    
+    // HR specialization
+    { code: 'IM-816HA', name: 'Performance and Planning Appraisal' },
+    { code: 'IM-817HA', name: 'IR and Labour Laws' },
+    { code: 'IM-818HA', name: 'Organizational Development' },
+    
+    // Business Analytics specialization
+    { code: 'IM-810BA', name: 'Digital Analytics' },
+    { code: 'IM-811BA', name: 'Predictive Modelling and Pattern Discovery' },
+    { code: 'IM-812BA', name: 'Big Data Analysis' },
+    
+    // General Management
+    { code: 'IM-801B', name: 'Quality Management' }
+  ],
+  'mba_sem_9': [
+    { code: 'IM-901', name: 'Strategic Financial Management' },
+    { code: 'IM-902', name: 'Supply Chain Management' },
+    { code: 'IM-903', name: 'Mergers & Acquisitions' },
+    { code: 'IM-904', name: 'Business Forecasting & Analysis' },
+    { code: 'IM-905', name: 'Innovation Management' }
+  ],
+  'mba_sem_10': [
+    { code: 'IM-1001', name: 'Thesis/Project Work' }
+  ],
 
       // MBA_ESHIP Semesters
       'mba_es_1': [
