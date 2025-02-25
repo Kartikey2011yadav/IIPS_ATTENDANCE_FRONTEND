@@ -10,15 +10,13 @@ import AlertModal from "../AlertModal/AlertModal";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [otp, setOtp] = useState("");
-  const [showOtp, setShowOtp] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Loading state
-  const [d, setDisplay] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Teacher:login";
@@ -47,64 +45,40 @@ function Login() {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/teacher/login`, { email, password })
       .then((response) => {
-        console.log(response.data.message);
-        setShowOtp(true);
-        setModalMessage(response.data.message);
+        const { sessionId, message, teacherId, name, email, mobileNumber, photo } = response.data;
+
+        // Set modal state for success
+        setModalMessage(message || "Login successful");
         setIsError(false);
         setModalIsOpen(true);
-      })
-      .catch((error) => {
-        console.log(error);
-        setModalMessage(error.response.data.error);
-        setIsError(true);
-        setModalIsOpen(true);
-      })
-      .finally(() => {
-        setIsLoading(false); // Stop loading
-      });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsLoading(true); // Start loading
-
-    axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/teacher/verify-otp`, { email, otp })
-      .then((response) => {
-        const { sessionId, message, teacherId, name, email, mobileNumber, photo } =
-          response.data;
-
-        // Set modal state first
-        setModalMessage(message);
-        setIsError(false);
-        setModalIsOpen(true);
+        // Store session ID and teacher's details in local storage
+        localStorage.setItem("sessionId", sessionId);
+        localStorage.setItem("teacherId", teacherId);
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("photo", photo);
+        localStorage.setItem("mobileNumber", mobileNumber);
 
         // Navigate after a short delay to ensure modal is shown
         setTimeout(() => {
-          // Store session ID and teacher's details in local storage
-          localStorage.setItem("sessionId", sessionId);
-          localStorage.setItem("teacherId", teacherId);
-          localStorage.setItem("name", name);
-          localStorage.setItem("email", email);
-          localStorage.setItem("photo", photo);
-          localStorage.setItem("mobileNumber", mobileNumber);
-
-          navigate("/Dashboard"); // Navigate to dashboard after successful login
-        }, 1000); // Adjust delay as needed
+          navigate("/Dashboard");
+        }, 1000);
       })
       .catch((error) => {
-        setModalMessage(error.response.data.error);
+        console.log(error);
+        setModalMessage(error.response?.data?.error || "Login failed");
         setIsError(true);
         setModalIsOpen(true);
       })
       .finally(() => {
-        setIsLoading(false); // Stop loading
+        setIsLoading(false);
       });
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("sessionId"); // Remove session ID from local storage
-    navigate("/"); // Redirect back to login page
+    localStorage.removeItem("sessionId");
+    navigate("/");
   };
 
   const handleCloseModal = () => {
@@ -116,7 +90,7 @@ function Login() {
       <div className={`login-container ${theme}`}>
         <img src={logo} alt="Logo" />
         <h2>Teacher : Login</h2>
-        <form onSubmit={showOtp ? handleSubmit : handleLogin}>
+        <form onSubmit={handleLogin}>
           <div>
             <label>Email:</label>
             <div>
@@ -125,7 +99,6 @@ function Login() {
                 value={email}
                 placeholder="Enter your Email"
                 onChange={(e) => setEmail(e.target.value)}
-                disabled={showOtp}
                 required
               />
             </div>
@@ -135,45 +108,26 @@ function Login() {
             <label>Password:</label>
             <div className="eye-container">
               <input
-                type={d ? "text" : "password"}
+                type={showPassword ? "text" : "password"}
                 placeholder="Enter Your Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                disabled={showOtp}
                 required
                 className="password-eye"
               />
-              {d ? (
+              {showPassword ? (
                 <FaEye
                   className="eyes"
-                  onClick={() => {
-                    setDisplay(false);
-                  }}
+                  onClick={() => setShowPassword(false)}
                 />
               ) : (
                 <FaEyeSlash
                   className="eyes"
-                  onClick={() => {
-                    setDisplay(true);
-                  }}
+                  onClick={() => setShowPassword(true)}
                 />
               )}
             </div>
           </div>
-          {showOtp && (
-            <div>
-              <label>OTP:</label>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Enter OTP"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  required
-                />
-              </div>
-            </div>
-          )}
           <p
             className="login_forgot_password"
             onClick={() => navigate("/forgot_password")}
@@ -181,7 +135,7 @@ function Login() {
             Forgot Password?
           </p>
           <button type="submit" disabled={isLoading}>
-            {isLoading ? "Submitting..." : showOtp ? "Submit" : "Next"}
+            {isLoading ? "Logging in..." : "Login"}
           </button>
           <p
             className="signup_text_redirect"

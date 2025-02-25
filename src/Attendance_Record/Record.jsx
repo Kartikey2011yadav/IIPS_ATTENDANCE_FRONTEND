@@ -26,7 +26,34 @@ const Record = () => {
   const filtersLoaded = useRef(false);
   const subjectsLoaded = useRef(false);
   const shouldFetchData = useRef(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [availableSemesters, setAvailableSemesters] = useState([]);
+
+  // Map from display course names to subjectMapping keys
+  const courseKeyMap = {
+    'MTECH': 'mtech',
+    'MCA': 'mca',
+    'MBA(MS)': 'mba_sem',
+    'MBA(ESHIP)': 'mba_es',
+    'MBA(APR)': 'mba_apr',
+    'MBA(TM)': 'mba_tm',
+    'MBA(FT)': 'mba_ft',
+    'BCOM': 'bcom'
+  };
+
+  // Function to get available semesters for a course
+  const getAvailableSemesters = (courseKey) => {
+    if (!courseKey) return [];
+    
+    const availableSems = [];
+    for (let i = 1; i <= 10; i++) {
+      const key = `${courseKey}_${i}`;
+      if (subjectMapping[key]) {
+        availableSems.push(i);
+      }
+    }
+    return availableSems;
+  };
 
   // Generate academic year options
   const generateAcademicYears = () => {
@@ -39,6 +66,22 @@ const Record = () => {
     }
     return years;
   };
+
+  // Update available semesters when course changes
+  useEffect(() => {
+    if (course) {
+      const courseKey = courseKeyMap[course];
+      const semesters = getAvailableSemesters(courseKey);
+      setAvailableSemesters(semesters);
+      
+      // Reset semester if the current one isn't available
+      if (semester && !semesters.includes(parseInt(semester))) {
+        setSemester('');
+      }
+    } else {
+      setAvailableSemesters([]);
+    }
+  }, [course]);
 
   // Load saved filters on component mount only once
   useEffect(() => {
@@ -61,7 +104,8 @@ const Record = () => {
   // Update subjects when course or semester changes
   useEffect(() => {
     if (course && semester) {
-      const key = `${course.toLowerCase()}_${semester}`;
+      const courseKey = courseKeyMap[course];
+      const key = `${courseKey}_${semester}`;
       const subjectList = subjectMapping[key] || [];
       setSubjects(subjectList);
       
@@ -105,6 +149,7 @@ const Record = () => {
 
   const handleCourseChange = (e) => {
     setCourse(e.target.value);
+    setSemester('');
     setAttendanceSummary([]);
     subjectsLoaded.current = false;
   };
@@ -238,11 +283,11 @@ const Record = () => {
   const toggleTheme = () => {
     if(theme === 'light' || !theme){
       setTheme('dark');
-      localStorage.setItem('theme', 'dark'); // Initialize theme in local storage
+      localStorage.setItem('theme', 'dark');
     }
     else{
       setTheme('light');
-      localStorage.setItem('theme', 'light'); // Initialize theme in local storage
+      localStorage.setItem('theme', 'light');
     }
   };
 
@@ -280,6 +325,12 @@ const Record = () => {
               <option value="">Select Course</option>
               <option value="MTECH">MTECH</option>
               <option value="MCA">MCA</option>
+              <option value="MBA(MS)">MBA(MS)</option>
+              <option value="MBA(ESHIP)">MBA(ESHIP)</option>
+              <option value="MBA(APR)">MBA(APR)</option>
+              <option value="MBA(TM)">MBA(TM)</option>
+              <option value="MBA(FT)">MBA(FT)</option>
+              <option value="BCOM">BCOM</option>
             </select>
           </div>
           
@@ -290,9 +341,10 @@ const Record = () => {
               value={semester} 
               onChange={handleSemesterChange}
               className="record_filter-select"
+              disabled={!course}
             >
               <option value="">Select Semester</option>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(sem => (
+              {availableSemesters.map(sem => (
                 <option key={sem} value={sem}>{sem}</option>
               ))}
             </select>

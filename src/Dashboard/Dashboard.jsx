@@ -40,7 +40,8 @@ const Dashboard = () => {
     'MBA(ESHIP)': 'mba_es',
     'MBA(APR)': 'mba_apr',
     'MBA(TM)': 'mba_tm',
-    'MBA(FT)': 'mba_ft'
+    'MBA(FT)': 'mba_ft',
+    'BCOM': 'bcom'
   };
 
   // Function to get available semesters for a course
@@ -240,6 +241,7 @@ const Dashboard = () => {
               <option value="MBA(APR)">MBA(APR)</option>
               <option value="MBA(TM)">MBA(TM)</option>
               <option value="MBA(FT)">MBA(FT)</option>
+              <option value="BCOM">BCOM</option>
             </select>
           </div>
           
