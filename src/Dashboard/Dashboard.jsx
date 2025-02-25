@@ -193,7 +193,7 @@ const Dashboard = () => {
             >
               <option value="">Select Semester</option>
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(sem => (
-                <option key={sem} value={sem}>{sem}st</option>
+                <option key={sem} value={sem}>{sem}</option>
               ))}
             </select>
           </div>
@@ -260,7 +260,7 @@ const Dashboard = () => {
                           checked={attendanceMap[student._id] || false}
                           onChange={() => handleAttendanceChange(student._id)}
                         />
-                        <span style={{display:"contents"}}>{attendanceMap[student._id] ? 'Present' : 'Absent'}</span>
+                        
                       </label>
                     </td>
                     <td>{student.rollNumber}</td>
