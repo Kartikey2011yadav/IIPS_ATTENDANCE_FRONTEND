@@ -47,7 +47,6 @@
 }
 
 .login-container.dark {
-  border: 1px solid var(--border-color-dark);
   background-color: var(--background-color-inner-dark) !important;
 }
 
@@ -88,7 +87,6 @@
 }
 
 .login-container.dark input {
-  border: 1px solid var(--border-color-dark);
   background-color: var(--input-background-color-dark) !important;
 }
 
