@@ -58,7 +58,7 @@ const App = () => {
       <Route path="/sign_up" element={<SignUp />} />
       <Route path="/verify_passcode" element={<VerifyOtp />} />
       <Route path="/forgot_password" element={<Forgot_Password />} />
-      <Route path='/reset_password' element={<Reset_Password />} />
+      <Route path="/reset_password" element={<Reset_Password />} />
 
       {isAuthenticated && (
         // All protected routes should be placed here 

@@ -5,7 +5,6 @@ import axios from 'axios';
 import { subjectMapping } from '../utils/subjectMapping';
 import Loader from '../Loader/Loader';
 import AlertModal from '../AlertModal/AlertModal';
-
 import { useNavigate, useLocation } from 'react-router-dom';
 import * as XLSX from 'xlsx';
 import NotificationModal from '../NotificationModel/NotificationModel';
@@ -27,6 +26,7 @@ const Record = () => {
   const filtersLoaded = useRef(false);
   const subjectsLoaded = useRef(false);
   const shouldFetchData = useRef(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
 
   // Generate academic year options
   const generateAcademicYears = () => {
@@ -235,9 +235,20 @@ const Record = () => {
     }
   };
 
+  const toggleTheme = () => {
+    if(theme === 'light' || !theme){
+      setTheme('dark');
+      localStorage.setItem('theme', 'dark'); // Initialize theme in local storage
+    }
+    else{
+      setTheme('light');
+      localStorage.setItem('theme', 'light'); // Initialize theme in local storage
+    }
+  };
+
   return (
-    <div className="record_container">
-      <Navbar />
+    <div className={`record_container ${theme}`}>
+      <Navbar theme={theme} toggleTheme={toggleTheme}/>
       
       {loading && <Loader />}
       

@@ -16,6 +16,7 @@ const Reset_Password = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false); // Modal state
   const [loading, setLoading] = useState(true);
   const [isError, setIsError] = useState(false); // Error state for modal
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -63,13 +64,19 @@ const Reset_Password = () => {
     }
   };
 
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme); // Save theme to local storage
+  };
+
   return (
-    <div className="reset-container-main">
+    <div className={`reset-container-main ${theme}`}>
       {loading ? (
         <Loader />
       ) : (
         <>
-          <div className="reset-container">
+          <div className={`reset-container ${theme}`}>
             <img alt="logo" src={Logo} />
             <h2>Teacher: Reset Password</h2>
             <form onSubmit={handleSubmit}>

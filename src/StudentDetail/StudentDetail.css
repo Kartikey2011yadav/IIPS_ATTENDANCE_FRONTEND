@@ -1,228 +1,294 @@
+:root {
+  --background-color-light: #ffffff;
+  --text-color-light: #000000;
+  --background-color-dark: #111;
+  --text-color-dark: #f5f5f5;
+  --card-background-color-light: #f0f0f0;
+  --card-background-color-dark: #1e1e1e;
+  --button-background-color-light: #4CAF50;
+  --button-background-color-dark: #3a9e40;
+  --button-hover-color-light: #45a049;
+  --button-hover-color-dark: #2e7d32;
+  --border-color-light: #ccc;
+  --border-color-dark: #444;
+}
+
 .student-detail-container {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #111;
-    display: flex;
-    flex-direction: column;
-  }
-  
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-detail-container.light {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.student-detail-container.dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.student-detail-content {
+  max-width: 1200px;
+  width: 95%;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.student-detail-content.light {
+  background-color: var(--card-background-color-light);
+}
+
+.student-detail-content.dark {
+  background-color: var(--card-background-color-dark);
+}
+
+.student-detail-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.student-detail-header h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.student-detail-back-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.student-detail-back-btn.light {
+  background-color: var(--button-background-color-light);
+  color: white;
+}
+
+.student-detail-back-btn.dark {
+  background-color: var(--button-background-color-dark);
+  color: white;
+}
+
+.student-detail-back-btn.light:hover {
+  background-color: var(--button-hover-color-light);
+}
+
+.student-detail-back-btn.dark:hover {
+  background-color: var(--button-hover-color-dark);
+}
+
+.student-info-card, .attendance-summary-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.student-info-card.light, .attendance-summary-card.light {
+  background-color: var(--card-background-color-light);
+}
+
+.student-info-card.dark, .attendance-summary-card.dark {
+  background-color: var(--card-background-color-dark);
+}
+
+.student-info-card h3, .attendance-summary-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color-dark);
+  padding-bottom: 0.8rem;
+}
+
+.student-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.3rem;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.summary-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.good-attendance {
+  color: #3a9e40;
+}
+
+.warning-attendance {
+  color: #f39c12;
+}
+
+.critical-attendance {
+  color: #e74c3c;
+}
+
+.attendance-records-section {
+  margin-top: 2rem;
+}
+
+.attendance-records-section h3 {
+  margin-bottom: 1.5rem;
+}
+
+.attendance-records-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.attendance-records-table.light {
+  background-color: var(--card-background-color-light);
+}
+
+.attendance-records-table.dark {
+  background-color: var(--card-background-color-dark);
+}
+
+.attendance-records-table th, 
+.attendance-records-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color-dark);
+}
+
+.attendance-records-table th {
+  background-color: #333;
+  color: #fff;
+  font-weight: 600;
+}
+
+.present-row {
+  background-color: rgba(58, 158, 64, 0.15);
+}
+
+.absent-row {
+  background-color: rgba(231, 76, 60, 0.15);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-badge.present {
+  background-color: rgba(58, 158, 64, 0.2);
+  color: #4caf50;
+}
+
+.status-badge.absent {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #f44336;
+}
+
+.no-records-message {
+  text-align: center;
+  padding: 2rem;
+  color: #aaa;
+  border-radius: 8px;
+}
+
+.no-records-message.light {
+  background-color: var(--card-background-color-light);
+}
+
+.no-records-message.dark {
+  background-color: var(--card-background-color-dark);
+}
+
+.student-detail-error {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.student-detail-error.light {
+  background-color: var(--card-background-color-light);
+  color: var(--text-color-light);
+}
+
+.student-detail-error.dark {
+  background-color: var(--card-background-color-dark);
+  color: var(--text-color-dark);
+}
+
+@media (max-width: 768px) {
   .student-detail-content {
-    max-width: 1200px;
-    width: 95%;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    color: #f5f5f5;
+    padding: 1rem;
   }
-  
   .student-detail-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  
-  .student-detail-header h2 {
-    flex: 1;
-    text-align: center;
-    margin: 0;
-    color: #fff;
-  }
-  
-  .student-detail-back-btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #3a9e40;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .student-detail-back-btn:hover {
-    background-color: #2e7d32;
-  }
-  
-  .student-info-card, .attendance-summary-card {
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .student-info-card h3, .attendance-summary-card h3 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    border-bottom: 1px solid #444;
-    padding-bottom: 0.8rem;
-  }
-  
-  .student-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .info-item {
-    display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
   }
-  
-  .info-label {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-bottom: 0.3rem;
+  .student-detail-content{
+      width: 85%;
   }
-  
-  .info-value {
-    font-size: 1.1rem;
-    color: #fff;
-    font-weight: 500;
+  .student-info-grid {
+    grid-template-columns: 1fr;
   }
   
   .summary-stats {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
-  .stat-item {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 120px;
-  }
-  
-  .stat-value {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-    color: #fff;
-  }
-  
-  .stat-label {
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-  
-  .good-attendance {
-    color: #3a9e40;
-  }
-  
-  .warning-attendance {
-    color: #f39c12;
-  }
-  
-  .critical-attendance {
-    color: #e74c3c;
-  }
-  
-  .attendance-records-section {
-    margin-top: 2rem;
-  }
-  
-  .attendance-records-section h3 {
-    margin-bottom: 1.5rem;
-    color: #fff;
-  }
-  
-  .attendance-records-table {
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    overflow: hidden;
   }
   
   .attendance-records-table th, 
   .attendance-records-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #444;
+    padding: 0.8rem;
   }
-  
-  .attendance-records-table th {
-    background-color: #333;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .present-row {
-    background-color: rgba(58, 158, 64, 0.15);
-  }
-  
-  .absent-row {
-    background-color: rgba(231, 76, 60, 0.15);
-  }
-  
-  .status-badge {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-  
-  .status-badge.present {
-    background-color: rgba(58, 158, 64, 0.2);
-    color: #4caf50;
-  }
-  
-  .status-badge.absent {
-    background-color: rgba(231, 76, 60, 0.2);
-    color: #f44336;
-  }
-  
-  .no-records-message {
-    text-align: center;
-    padding: 2rem;
-    color: #aaa;
-    background-color: #333;
-    border-radius: 8px;
-  }
-  
-  .student-detail-error {
-    text-align: center;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 600px;
-    background-color: #2a2a2a;
-    color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  @media (max-width: 768px) {
-    .student-detail-content {
-      padding: 1rem;
-    }
-    .student-detail-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-    .student-detail-content{
-        width: 85%;
-    }
-    .student-info-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .summary-stats {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .attendance-records-table th, 
-    .attendance-records-table td {
-      padding: 0.8rem;
-    }
-  }
+}

@@ -19,6 +19,7 @@ const StudentDetail = () => {
   const [studentInfo, setStudentInfo] = useState(null);
   const [attendanceRecords, setAttendanceRecords] = useState([]);
   const [summary, setSummary] = useState({ present: 0, absent: 0, total: 0, percentage: 0 });
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
 
   useEffect(() => {
     if (studentId && subject && semester && academicYear) {
@@ -81,10 +82,21 @@ const StudentDetail = () => {
     navigate('/attendance_record', { state: { returnFromDetail: true } });
   };
 
+  const toggleTheme = () => {
+    if(theme === 'light' || !theme){
+      setTheme('dark');
+      localStorage.setItem('theme', 'dark'); // Initialize theme in local storage
+    }
+    else{
+      setTheme('light');
+      localStorage.setItem('theme', 'light'); // Initialize theme in local storage
+    }
+  };
+
   if (!studentInfo && !loading) {
     return (
-      <div className="student-detail-container">
-        <Navbar />
+      <div className={`student-detail-container ${theme}`}>
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <div className="student-detail-error">
           <h2>Student information not available</h2>
           <button onClick={handleBackToRecords} className="student-detail-back-btn">Back to Records</button>
@@ -94,8 +106,8 @@ const StudentDetail = () => {
   }
 
   return (
-    <div className="student-detail-container">
-      <Navbar />
+    <div className={`student-detail-container ${theme}`}>
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       
       {loading && <Loader />}
       

@@ -1,86 +1,124 @@
-.eye-containers
-{
-    position: relative;
+:root {
+  --background-color-light: #ffffff;
+  --text-color-light: #000000;
+  --background-color-dark: #282828;
+  --text-color-dark: #ffffff;
+  --input-background-color-light: #f0f0f0;
+  --input-background-color-dark: #4d4d4d;
+  --button-background-color-light: #4CAF50;
+  --button-background-color-dark: #4CAF50;
+  --button-hover-color-light: #45a049;
+  --button-hover-color-dark: #45a049;
+  --border-color-light: #ccc;
+  --border-color-dark: #444;
 }
-.eyes-signup
-{
-    position: absolute;
-    right: 10px;
-    top: 15px;
-}
-.sign_up_Box_min{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-.Sign_up_Box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    border : 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #282828 ;
-    box-shadow: 0px 0px 10px white;
 
+.eye-containers {
+  position: relative;
+}
+
+.eyes-signup {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.sign_up_Box_min {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.sign_up_Box_min.light {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.sign_up_Box_min.dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.Sign_up_Box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid var(--border-color-light);
+  border-radius: 8px;
+  background-color: var(--background-color-light);
+  box-shadow: 0px 0px 10px white;
+}
+
+.Sign_up_Box.dark {
+  border: 1px solid var(--border-color-dark);
+  background-color: var(--background-color-dark);
 }
 
 .Sign_up_Box img {
-    display: grid;
-    height: 90px;
-    width: 80px;
-    /* margin-bottom: 10px; */
-    
-    
+  display: grid;
+  height: 90px;
+  width: 80px;
 }
 
 .Sign_up_Box h3 {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    color: #fffcfc;
-  }
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: inherit;
+}
 
-.Sign_up_Box label{
-    margin-bottom: 8px;
-    color: #fffcfc;
+.Sign_up_Box label {
+  margin-bottom: 8px;
+  color: inherit;
 }
 
 .Sign_up_Box input {
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 5px;
-    /* margin-left: 20px; */
-    font-size: 16px;
-    width: 95%;
-    background-color: #4d4d4d;
-    color: white;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color-light);
+  border-radius: 4px;
+  margin-top: 5px;
+  font-size: 16px;
+  width: 95%;
+  background-color: var(--input-background-color-light);
+  color: inherit;
+}
+
+.Sign_up_Box.dark input {
+  border: 1px solid var(--border-color-dark);
+  background-color: var(--input-background-color-dark);
 }
 
 .Sign_up_Box button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    background-color: #4caf50;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: var(--button-background-color-light);
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
 
-    width: 100%;
+.Sign_up_Box.dark button {
+  background-color: var(--button-background-color-dark);
 }
 
 .Sign_up_Box button:hover {
-    background-color: #45a049;
-  }
+  background-color: var(--button-hover-color-light);
+}
 
-  /* verify passcode */
-  .verify_passcode_form{
-    width: 100%;
+.Sign_up_Box.dark button:hover {
+  background-color: var(--button-hover-color-dark);
+}
+
+/* verify passcode */
+.verify_passcode_form {
+  width: 100%;
 }

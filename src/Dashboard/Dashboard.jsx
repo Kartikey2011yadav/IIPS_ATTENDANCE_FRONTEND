@@ -18,6 +18,7 @@ const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [isError, setIsError] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
 
   // Get current date in IST format
   const getCurrentDateIST = () => {
@@ -152,11 +153,26 @@ const Dashboard = () => {
     }
   };
 
+  const toggleTheme = () => {
+    if(theme === 'light' || !theme){
+      setTheme('dark');
+      localStorage.setItem('theme', 'dark'); // Initialize theme in local storage
+    }
+    else{
+      setTheme('light');
+      localStorage.setItem('theme', 'light'); // Initialize theme in local storage
+    }
+  };
+
   return (
-    <div className="dashboard-container">
-      <Navbar />
+    <div className={`dashboard-container ${theme}`}>
+      <Navbar theme={theme} toggleTheme={toggleTheme}/>
       
-        {loading && <Loader />}
+      {/* <button onClick={toggleTheme} className="btn-toggle-theme">
+        Toggle Theme
+      </button> */}
+      
+      {loading && <Loader />}
       
       <AlertModal 
         isOpen={isModalOpen} 

@@ -1,11 +1,33 @@
+:root {
+  --background-color-light: #ffffff;
+  --text-color-light: #000000;
+  --background-color-dark: #1a1a1a;
+  --text-color-dark: #ffffff;
+  --button-background-color-light: #ffffff;
+  --button-background-color-dark: #4CAF50;
+  --button-hover-color-light: #e6e6e6;
+  --button-hover-color-dark: #45a049;
+  --button-text-color-light: #000000;
+  --button-text-color-dark: #ffffff;
+}
+
 .error-container {
-  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  min-height: 100vh;
+}
+
+.error-container.light {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.error-container.dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
 }
 
 .error404-heading {
@@ -30,19 +52,28 @@
 .go-back-button {
   padding: 10px 20px;
   font-size: 1.2rem;
-  background-color: white;
-  color: green;
+  background-color: var(--button-background-color-light);
+  color: var(--button-text-color-light);
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
-.go-back-button:hover {
-  background-color: #e6e6e6;
+.error-container.dark .go-back-button {
+  background-color: var(--button-background-color-dark);
+  color: var(--button-text-color-dark);
 }
-@media (max-width:768px) {
-  .panda-image{
+
+.go-back-button:hover {
+  background-color: var(--button-hover-color-light);
+}
+
+.error-container.dark .go-back-button:hover {
+  background-color: var(--button-hover-color-dark);
+}
+
+@media (max-width: 768px) {
+  .panda-image {
     width: 300px;
   }
-  
 }

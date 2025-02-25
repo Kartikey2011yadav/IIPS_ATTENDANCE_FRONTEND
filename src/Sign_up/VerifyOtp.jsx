@@ -8,13 +8,16 @@ import Loader from "../Loader/Loader";
 const VerifyOtp = () => {
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
-  const [loading,setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [isAlertOpen, setIsAlertOpen] = useState(false); // Modal for success/error messages
   const [alertMessage, setAlertMessage] = useState("");
   const [isErrorAlert, setIsErrorAlert] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from local storage
   const navigate = useNavigate();
 
-  useEffect(()=>{setTimeout(()=>{setLoading(false);},1000);},[]);
+  useEffect(() => {
+    setTimeout(() => { setLoading(false); }, 1000);
+  }, []);
 
   const handleVerify = async (e) => {
     e.preventDefault();
@@ -49,42 +52,48 @@ const VerifyOtp = () => {
     }
   };
 
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme); // Save theme to local storage
+  };
+
   return (
-    <div className="sign_up_Box_min">
+    <div className={`sign_up_Box_min ${theme}`}>
       {loading ? (<Loader />) : (<>
-        <div className="Sign_up_Box">
-        <img src={var1} alt="" />
-        <h3>Enter Your PassCode</h3>
-        <form onSubmit={handleVerify} className="verify_passcode_form">
-          <div>
-            <label>
-              Email :
-              <input
-                type="email"
-                placeholder="Enter your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </label>
-          </div>
+        <div className={`Sign_up_Box ${theme}`}>
+          <img src={var1} alt="" />
+          <h3>Enter Your PassCode</h3>
+          <form onSubmit={handleVerify} className="verify_passcode_form">
+            <div>
+              <label>
+                Email :
+                <input
+                  type="email"
+                  placeholder="Enter your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
 
-          <div>
-            <label>
-              OTP :
-              <input
-                type="text"
-                placeholder="Enter OTP"
-                value={otp}
-                onChange={(e) => setOtp(e.target.value)}
-                required
-              />
-            </label>
-          </div>
+            <div>
+              <label>
+                OTP :
+                <input
+                  type="text"
+                  placeholder="Enter OTP"
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
 
-          <button type="submit">Verify & Sign up</button>
-        </form>
-      </div>
+            <button type="submit">Verify & Sign up</button>
+          </form>
+        </div>
       </>)}
 
       {/* Alert Modal for success/error messages */}
