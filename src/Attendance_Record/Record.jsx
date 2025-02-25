@@ -32,7 +32,7 @@ const Record = () => {
   const generateAcademicYears = () => {
     const currentYear = new Date().getFullYear();
     const years = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i < 2; i++) {
       const startYear = currentYear - i;
       const endYear = startYear + 1;
       years.push(`${startYear}-${endYear}`);
